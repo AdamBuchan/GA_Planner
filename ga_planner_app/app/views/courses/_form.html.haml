@@ -1,0 +1,27 @@
+= form_for @course do |f|
+
+  - if @course.errors.any?
+    %h2 Form is invalid
+    %ul
+      - @course.errors.full_messages.each do |message|
+        %li= message
+
+  = f.label :name
+  = f.text_field :name
+  %br/
+  = f.label :start_date
+  = f.date_select :start_date
+  %br/
+  = f.label :end_date
+  = f.date_select :end_date
+  %br/
+  = f.label :places
+  = f.number_field :places
+  %br/
+  = f.label :classroom_id
+  = f.select :classroom_id, options_from_collection_for_select(Classroom.all, 'id', 'name', if @course.classroom then @course.classroom.id else end)
+  %br/
+  = f.label :image
+  = f.text_field :image
+  %br/
+  = f.submit  
