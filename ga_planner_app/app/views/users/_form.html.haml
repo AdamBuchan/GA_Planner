@@ -29,4 +29,8 @@
   = f.label :password_confirmation
   = f.password_field :password_confirmation
   %br/
+  - if can? :create, InstructorEnrolment
+    = f.label :level
+    = f.text_field :level
+
   = f.submit

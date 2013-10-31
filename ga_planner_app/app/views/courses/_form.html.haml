@@ -22,6 +22,9 @@
   = f.select :classroom_id, options_from_collection_for_select(Classroom.all, 'id', 'name', if @course.classroom then @course.classroom.id else end)
   %br/
   = f.label :image
-  = f.text_field :image
+  = f.file_field :image
+  %br/
+
+
   %br/
   = f.submit  

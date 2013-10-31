@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
-      @user.level = 'student'
+      if @user.level = '' then @user.level = 'student' end
       @user.save #repetition. refactor
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'Thank you for signing up'
+      redirect_to user_path(@user), notice: 'Thank you for signing up'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     # @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      redirect_to root_url, notice: 'User updated successfully'
+      redirect_to user_path(@user), notice: 'User updated successfully'
     else
       flash[:alert] = 'User NOT updated'
       render :edit
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   def destroy
     # @user = User.find(params[:id])
     @user.delete
+    session[:user_id] = nil
     redirect_to(users_path)
   end
 

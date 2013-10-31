@@ -5,16 +5,21 @@
 %p= "User type: #{@user.level}"
 = image_tag(@user.image)
 %br/
+
 = link_to('Edit Profile', edit_user_path(@user))
-= link_to('Delete User', @user, :method => :delete, :confirm => 'Are you sure?')
+- if can? :destroy, User
+  = link_to('Delete User', @user, :method => :delete, :confirm => 'Are you sure?')
 %br/
+
 %h5 Course Enrolments:
 - @user.courses.each do |course|
   %ul
     %li= course.name 
+    = link_to('Cancel Booking', student_enrolment_path(course_id: course.id, user_id: @user.id), :method => :delete, :confirm => 'Are you sure?')
 
 - if @user.level != 'student'
   %h5 Instructor Enrolments:
   - @user.lessons.each do |lesson|
     %ul
       %li= lesson.name
+

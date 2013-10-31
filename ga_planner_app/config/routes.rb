@@ -2,7 +2,8 @@ GaPlannerApp::Application.routes.draw do
 
   resources :courses
   resources :users
-  resources :student_enrolments, only: [:new, :create, :destroy]
+  resources :student_enrolments, only: [:create, :destroy]
+  resources :instructor_enrolments, only: [:create, :destroy]
 
   root to: 'courses#index'
 
