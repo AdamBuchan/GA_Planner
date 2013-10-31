@@ -6,26 +6,28 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %nav
-      %div.menubar
-        %img{ src:"/assets/GA.jpeg", width: 50 }
-        .courses
-          = link_to('Courses', courses_path)
-        = if current_user then link_to('Profile', user_path(current_user)) end
-        - if current_user
-          = if current_user.level != 'student' then link_to('Users', users_path) end
-
-        .login
+    %div.bground
+      %nav
+        %div.menubar
+          / %img{ src:"/assets/GA.jpeg", width: 50 }
+          .courses
+            = link_to('Courses', courses_path)
+          = if current_user then link_to('Profile', user_path(current_user)) end
           - if current_user
-            Logged in as #{current_user.first_name} #{current_user.last_name}
-            = link_to 'Logout', logout_path, method: :delete 
-          - else
-            = link_to 'Login', login_path
-            or
-            = link_to 'Sign Up', signup_path
-    .flash
-      - flash.each do |name, message|
-        %div(class="flash-message flash-#{name}")
-          = message
-    %section
-      = yield
+            = if current_user.level != 'student' then link_to('Users', users_path) end
+          = if can? :read, Classroom then link_to('Rooms', classrooms_path) end
+
+          .login
+            - if current_user
+              Logged in as #{current_user.first_name} #{current_user.last_name}
+              = link_to 'Logout', logout_path, method: :delete 
+            - else
+              = link_to 'Login', login_path
+              or
+              = link_to 'Sign Up', signup_path
+      .flash
+        - flash.each do |name, message|
+          %div(class="flash-message flash-#{name}")
+            = message
+      %section
+        = yield

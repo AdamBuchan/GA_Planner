@@ -1,9 +1,12 @@
+body {
+  background-image:url('GA2.jpg');
+}
+
 .menubar {
   background-color: gray;
   color: white;
   padding: 20px;
   margin-bottom: 30px;
-
   a {
     font-size: 20px;
     color:white;
@@ -18,7 +21,6 @@
     display: inline;
     float: right;
   }
-
 }
 
 .flash {
@@ -32,19 +34,20 @@
   margin-right: 5px;
   margin-top: 30px;
   margin-bottom: 10px;
-  border: solid blue 1px;
-  background-color: white;
+  // border: solid black 1px;
+  background-color: gray;
   border-radius: 3px;
   float: left;
   padding: 5px;
   a {
     text-decoration: none;
-    color: blue;
+    color: white;
   }
 }
 
 .list-course {
-  background-color: #f4eeea;
+  background-color: #efefee;
+  opacity: 0.8;
   width: 875px;
   height: 50px;
   border: solid black 1px;
@@ -55,23 +58,32 @@
   padding: 10px;
   display: block;
   .picture {
+    opacity: 1;
     display: inline;
     padding-left: 20px;
   }
   .name {
+    opacity: 1;
     position: absolute;
     font-size: 20px;
     display: inline;
     padding-left: 40px;
-    padding-top: 13px
+    padding-top: 13px;
+    a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    }
   }
   .start {
+    opacity: 1;
     position: absolute;
     display: inline;
     left: 550px;
     padding-top: 15px;
   }
   .end {
+    opacity: 1;
     position: absolute;
     display: inline;
     left: 750px;
@@ -80,7 +92,8 @@
 }
 
 .list-user {
-  background-color: #fcfadf;
+  background-color: #efefee;
+  opacity: 0.8;
   width: 475px;
   height: 50px;
   border: solid black 1px;
@@ -100,6 +113,11 @@
     display: inline;
     padding-left: 40px;
     padding-top: 13px;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
   }
   .level {
     position: absolute;
@@ -107,6 +125,61 @@
     display: inline;
     padding-left: 40px;
     padding-top: 15px;
+  }
+}
+
+.list-rooms {
+  background-color: #efefee;
+  opacity: 0.8;
+  width: 650px;
+  height: 50px;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: block;
+  .name {
+    position: absolute;
+    font-size: 20px;
+    display: inline;
+    padding-left: 20px;
+    padding-top: 13px;
+    font-weight: bold;
+  }
+  .location {
+    position: absolute;
+    left: 200px;
+    display: inline;
+    padding-left: 40px;
+    padding-top: 15px;
+  }
+  .edit {
+    position: absolute;
+    left: 400px;
+    background-color: gray;
+    border-radius: 3px;
+    float: left;
+    padding: 5px;
+    margin-top: 11px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .delete {
+    position: absolute;
+    left: 550px;
+    background-color: gray;
+    border-radius: 3px;
+    float: left;
+    padding: 5px;
+    margin-top: 11px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 

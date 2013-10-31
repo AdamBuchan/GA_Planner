@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    # @courses = Course.all
+    @courses = Course.order("start_date ASC").all
   end
 
   def new

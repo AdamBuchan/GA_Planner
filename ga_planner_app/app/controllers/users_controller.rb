@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    # @users = User.all
+    @users = User.order("last_name ASC").all
   end
 
   def new
@@ -37,8 +37,9 @@ class UsersController < ApplicationController
 
   def destroy
     # @user = User.find(params[:id])
-    @user.delete
-    session[:user_id] = nil
+    if @user.delete
+      if current_user.id == :user_id then session[:user_id] = nil end
+    end
     redirect_to(users_path)
   end
 

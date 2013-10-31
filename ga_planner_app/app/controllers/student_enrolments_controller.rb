@@ -7,6 +7,9 @@ class StudentEnrolmentsController < ApplicationController
     if course.places == 0
       flash[:alert] = 'Cannot make booking - no more places left'
       redirect_to course_path(params[:course_id])
+    elsif StudentEnrolment.where("user_id = ? AND course_id = ?", current_user.id, params[:course_id]).first
+      flash[:alert] = 'Booking already exists'
+      redirect_to course_path(params[:course_id])
     else
       @student_enrolment = StudentEnrolment.new(user_id: current_user.id, course_id: params[:course_id])
       if @student_enrolment.save

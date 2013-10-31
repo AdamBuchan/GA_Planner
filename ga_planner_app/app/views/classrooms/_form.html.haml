@@ -1,0 +1,17 @@
+= form_for @classroom do |f|
+
+  - if @classroom.errors.any?
+    %h2 Form is invalid
+    %ul
+      - @classroom.errors.full_messages.each do |message|
+        %li= message
+
+  = f.label :name
+  = f.text_field :name
+  %br/
+  = f.label :location
+  = f.text_field :location
+  %br/
+
+  %br/
+  = f.submit  
