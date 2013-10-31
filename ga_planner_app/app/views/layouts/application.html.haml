@@ -15,7 +15,7 @@
           = if current_user then link_to('Profile', user_path(current_user)) end
           - if current_user
             = if current_user.level != 'student' then link_to('Users', users_path) end
-          = if can? :read, Classroom then link_to('Rooms', classrooms_path) end
+          = if can? :manage, Classroom then link_to('Rooms', classrooms_path) end
 
           .login
             - if current_user
