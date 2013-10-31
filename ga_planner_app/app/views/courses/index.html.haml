@@ -1,14 +1,20 @@
-- if can? :create, Course
-  = link_to('Create New Course', new_course_path)
+.button
+  - if can? :create, Course
+    = link_to('Create New Course', new_course_path)
+%br/
 
-%ul
-  - @courses.each do |course|
-    %li
-      %h4= link_to(course.name, course_path(course))
-      %p= "Start Date: #{course.start_date}"
-      %p= "End date: #{course.end_date}"
-      = image_tag(course.image, :width => 50)
-      %br/
+- @courses.each do |course|
+  %div.list-box
+    .picture
+      = image_tag(course.image, :width => 50, :height => 50)
+    .name      
+      = link_to(course.name, course_path(course))
+    .start
+      = "Start Date: #{course.start_date}"
+    .end
+      = "End date: #{course.end_date}"
+
+    %br/
 
 
 

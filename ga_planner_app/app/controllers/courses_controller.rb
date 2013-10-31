@@ -23,7 +23,7 @@ class CoursesController < ApplicationController
     room = params[:course][:classroom_id]
     existing_courses = Course.where("classroom_id = ?", room).each do |booking|
       if (start_date - booking.end_date) * (booking.start_date - end_date) >= 0
-        available = false
+        bookable = false
         # (@course.start_date > booking.start_date) && (@course.start_date < booking.end_date)
       end
     end
@@ -49,7 +49,7 @@ class CoursesController < ApplicationController
     room = params[:course][:classroom_id]
     existing_courses = Course.where("classroom_id = ?", room).each do |booking|
       if (start_date - booking.end_date) * (booking.start_date - end_date) >= 0
-        available = false
+        bookable = false
         # (@course.start_date > booking.start_date) && (@course.start_date < booking.end_date)
       end
     end
