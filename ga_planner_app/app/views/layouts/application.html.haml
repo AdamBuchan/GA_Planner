@@ -8,6 +8,7 @@
   %body
     %nav
       %div.menubar
+        %img{ src:"/assets/GA.jpeg", width: 50 }
         .courses
           = link_to('Courses', courses_path)
         = if current_user then link_to('Profile', user_path(current_user)) end
