@@ -49,7 +49,7 @@ body {
 .list-course {
   background-color: #efefee;
   opacity: 0.8;
-  width: 875px;
+  width: 900px;
   height: 50px;
   border: solid black 1px;
   border-radius: 5px;
@@ -64,7 +64,6 @@ body {
     padding-left: 20px;
   }
   .name {
-    opacity: 1;
     position: absolute;
     font-size: 20px;
     display: inline;
@@ -76,19 +75,25 @@ body {
     font-weight: bold;
     }
   }
-  .start {
-    opacity: 1;
+  .location {
     position: absolute;
     display: inline;
-    left: 550px;
+    left: 500px;
     padding-top: 15px;
   }
-  .end {
-    opacity: 1;
+  .start {
+    font-size: 12px;
     position: absolute;
     display: inline;
-    left: 750px;
-    padding-top: 15px;
+    left: 625px;
+    padding-top: 17px;
+  }
+  .end {
+    font-size: 12px;
+    position: absolute;
+    display: inline;
+    left: 800px;
+    padding-top: 17px;
   }
 }
 

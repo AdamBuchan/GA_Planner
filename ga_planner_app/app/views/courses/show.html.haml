@@ -4,6 +4,7 @@
   %p= "Start Date: #{@course.start_date}"
   %p= "End Date: #{@course.end_date}"
   %p= "Classroom: #{@course.classroom.name}"
+  %p= "Location: #{@course.classroom.location}"
   = image_tag(@course.image, :width => 325, :height => 225)
   %br/
   - if current_user

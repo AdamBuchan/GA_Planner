@@ -5,6 +5,8 @@
       = image_tag(course.image, :width => 50, :height => 50)
     .name      
       = link_to(course.name, course_path(course))
+    .location
+      = "#{course.classroom.location}"
     .start
       = "Start Date: #{course.start_date}"
     .end
