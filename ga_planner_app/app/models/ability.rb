@@ -14,7 +14,8 @@ class Ability
       can :create, StudentEnrolment
       can :create, InstructorEnrolment
       can :update, :all
-      can :destroy, :all
+      can :destroy, StudentEnrolment
+      can :destroy, InstructorEnrolment
 
     elsif user.level == 'instructor'
       can :read, :all

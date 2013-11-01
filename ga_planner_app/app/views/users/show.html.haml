@@ -18,6 +18,7 @@
   %br/
   %br/
   %h4 Course Enrolments:
+  %p= if @user.courses == [] then 'None' end
   - @user.courses.each do |course|
     %ul
       %li= course.name 
@@ -25,6 +26,7 @@
 
   - if @user.level != 'student'
     %h4 Instructor Enrolments:
+    %p= if @user.lessons == [] then 'None' end
     - @user.lessons.each do |lesson|
       %ul
         %li= lesson.name

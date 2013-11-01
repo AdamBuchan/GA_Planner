@@ -16,6 +16,7 @@
   %br/
   %br/
   %h4 Instructors:
+  %p= if @course.instructors == [] then 'No instructors yet assigned' end
   - @course.instructors.each do |instructor|
     %ul
       %li= "#{instructor.first_name} #{instructor.last_name}"
@@ -29,6 +30,7 @@
 
   - if can? :read, :all
     %h4 Students:
+    %p= if @course.students == [] then 'None' end
     - @course.students.each do |student|
       %ul
         %li= "#{student.first_name} #{student.last_name}"
