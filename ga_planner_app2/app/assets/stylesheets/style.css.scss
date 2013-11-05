@@ -1,0 +1,255 @@
+body {
+  background-image:url('GA2.jpg');
+  font-family: Arial;
+}
+
+.big-box {
+  width: 1000px;
+  margin: auto;
+}
+
+.left-box {
+  margin-left: 75px;
+  width: 500px;
+  float: left;
+}
+
+.right-box {
+  width: 500px;
+  float: left;
+}
+
+.footer {
+  margin-left: 75px;
+  clear: both;
+}
+
+.menubar {
+  background-color: gray;
+  color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  a {
+    font-size: 20px;
+    color:white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  a:hover {
+    // background-color: #c7c2b2;
+    color: black;
+  }
+  .courses {
+    display: inline;
+  }
+  .login {
+    display: inline;
+    float: right;
+  }
+}
+
+.flash {
+  background-color: #ae0805;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.button {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  // border: solid black 1px;
+  background-color: gray;
+  border-radius: 3px;
+  float: left;
+  padding: 5px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+    color: black;
+  }
+}
+
+.remove-button {
+  a {
+    font-size: 12px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    border-radius: 3px;
+    padding: 3px;
+  }
+  a:hover {
+    color: black;
+  }
+}
+
+.list-course {
+  background-color: #efefee;
+  opacity: 0.8;
+  width: 900px;
+  height: 50px;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: block;
+  .picture {
+    opacity: 1;
+    display: inline;
+    padding-left: 20px;
+  }
+  .name {
+    position: absolute;
+    font-size: 20px;
+    display: inline;
+    padding-left: 40px;
+    padding-top: 13px;
+    a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    }
+    a:hover {
+      color: #89857a;
+    }
+  }
+  .location {
+    position: absolute;
+    display: inline;
+    left: 500px;
+    padding-top: 15px;
+  }
+  .start {
+    font-size: 12px;
+    position: absolute;
+    display: inline;
+    left: 625px;
+    padding-top: 17px;
+  }
+  .end {
+    font-size: 12px;
+    position: absolute;
+    display: inline;
+    left: 800px;
+    padding-top: 17px;
+  }
+}
+
+.list-user {
+  background-color: #efefee;
+  opacity: 0.8;
+  width: 475px;
+  height: 50px;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: block;
+  .picture {
+    display: inline;
+    padding-left: 20px;
+  }
+  .name {
+    position: absolute;
+    font-size: 20px;
+    display: inline;
+    padding-left: 40px;
+    padding-top: 13px;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #89857a;
+    }
+  }
+  .level {
+    position: absolute;
+    left: 400px;
+    display: inline;
+    padding-left: 40px;
+    padding-top: 15px;
+  }
+}
+
+.list-rooms {
+  background-color: #efefee;
+  opacity: 0.8;
+  width: 650px;
+  height: 50px;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: block;
+  .name {
+    position: absolute;
+    font-size: 20px;
+    display: inline;
+    padding-left: 20px;
+    padding-top: 13px;
+    font-weight: bold;
+  }
+  .location {
+    position: absolute;
+    left: 200px;
+    display: inline;
+    padding-left: 40px;
+    padding-top: 15px;
+  }
+  .edit {
+    position: absolute;
+    left: 400px;
+    background-color: gray;
+    border-radius: 3px;
+    float: left;
+    padding: 5px;
+    margin-top: 11px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    a:hover {
+      color: black;
+    }
+  }
+  .delete {
+    position: absolute;
+    left: 550px;
+    background-color: gray;
+    border-radius: 3px;
+    float: left;
+    padding: 5px;
+    margin-top: 11px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    a:hover {
+      color: black;
+    }
+  }
+}
+
+
+
+
+
+

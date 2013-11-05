@@ -1,0 +1,16 @@
+
+- @classrooms.each do |classroom|
+  %div.list-rooms
+    .name      
+      = classroom.name
+    .location
+      = classroom.location
+    .edit
+      = link_to('Edit Classroom', edit_classroom_path(classroom))
+    .delete
+      = link_to('Delete Classroom', classroom, :method => :delete, :confirm => 'Are you sure?')
+
+- if can? :create, Classroom
+  .button
+    = link_to('Create New Classroom', new_classroom_path)
+

@@ -1,0 +1,23 @@
+
+- @courses.each do |course|
+  %div.list-course
+    .picture
+      = image_tag(course.image, :width => 50, :height => 50)
+    .name      
+      = link_to(course.name, course_path(course))
+    .location
+      = "#{course.classroom.location}"
+    .start
+      = "Start Date: #{course.start_date}"
+    .end
+      = "End date: #{course.end_date}"
+    %br/
+
+- if can? :create, Course
+  .button
+    = link_to('Create New Course', new_course_path)
+
+
+
+
+

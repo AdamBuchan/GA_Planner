@@ -1,0 +1,38 @@
+%container.big-box
+  %div.left-box
+    %h3= "#{@user.first_name} #{@user.last_name}"
+    %p= "Email: #{@user.email}"
+    %p= "Address: #{@user.address}"
+    %p= "Gender: #{@user.gender}"
+    %p= "User type: #{@user.level}"
+    = image_tag(@user.image, :width => 225, :height => 225)
+
+  %div.right-box
+    %h4 Course Enrolments:
+    %p= if @user.courses == [] then 'None' end
+    - @user.courses.each do |course|
+      %ul
+        %li.remove-button
+          = course.name 
+          = link_to('Cancel Booking', student_enrolment_path(course_id: course.id, user_id: @user.id), :method => :delete, :confirm => 'Are you sure?')
+
+    %br/
+    %br/
+    - if @user.level != 'student'
+      %h4 Instructor Enrolments:
+      %p= if @user.lessons == [] then 'None' end
+      - @user.lessons.each do |lesson|
+        %ul
+          %li= lesson.name
+
+  %div.footer
+    - if can? :admin, User
+      .button
+        = link_to('Edit Profile', "/admin_edit/#{@user.id}")
+    - elsif current_user.id == @user.id
+      .button
+        = link_to('Edit Profile', edit_user_path(@user))
+    - if can? :destroy, User
+      .button
+        = link_to('Delete User', @user, :method => :delete, :confirm => 'Are you sure?')  
+

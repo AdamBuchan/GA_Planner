@@ -1,0 +1,15 @@
+
+- @users.each do |user|
+  %div.list-user
+    .picture
+      = image_tag(user.image, :width => 50, :height => 50)
+    .name
+      = link_to("#{user.first_name} #{user.last_name}", user_path(user))
+    .level
+      = user.level
+    
+
+- if can? :manage, :all
+  .button
+    = link_to('Create New User', admin_new_path)
+%br/
